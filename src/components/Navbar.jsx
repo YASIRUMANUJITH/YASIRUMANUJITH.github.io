@@ -8,9 +8,8 @@ export default function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const openProjectsInNewPage = (e) => {
-        e.preventDefault();
-        window.open('/projects', '_blank', 'noopener,noreferrer');
+    const handleProjectsNavigation = () => {
+        navigate('/projects');
     };
 
     const handleNavigation = (section) => {
@@ -84,7 +83,7 @@ export default function Navbar() {
                     <li><button className='hover:text-gray-500 dark:hover:text-gray-300 transition' onClick={() => handleNavigation('top')}>Home</button></li>
                     <li><button className='hover:text-gray-500 dark:hover:text-gray-300 transition' onClick={() => handleNavigation('about')}>About me</button></li>
                     <li><button className='hover:text-gray-500 dark:hover:text-gray-300 transition' onClick={() => handleNavigation('services')}>Services</button></li>
-                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#" onClick={openProjectsInNewPage}>Projects</a></li>
+                    <li><button className='hover:text-gray-500 dark:hover:text-gray-300 transition' onClick={handleProjectsNavigation}>Projects</button></li>
                     <li><button className='hover:text-gray-500 dark:hover:text-gray-300 transition' onClick={() => handleNavigation('contact')}>Contact me</button></li>
                 </ul>
 
@@ -117,7 +116,7 @@ export default function Navbar() {
                     <li><button onClick={() => { handleNavigation('top'); closeMenu(); }}>Home</button></li>
                     <li><button onClick={() => { handleNavigation('about'); closeMenu(); }}>About me</button></li>
                     <li><button onClick={() => { handleNavigation('services'); closeMenu(); }}>Services</button></li>
-                    <li><a href="#" onClick={(e) => { openProjectsInNewPage(e); closeMenu(); }}>Projects</a></li>
+                    <li><button onClick={() => { handleProjectsNavigation(); closeMenu(); }}>Projects</button></li>
                     <li><button onClick={() => { handleNavigation('contact'); closeMenu(); }}>Contact me</button></li>
                 </ul>
             </nav>
