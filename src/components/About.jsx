@@ -31,15 +31,15 @@ export default function About() {
         },
     ];
     return (
-        <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
-            <h4 className="text-center mb-2 text-lg font-Ovo">Introduction</h4>
-            <h2 className="text-center text-5xl font-Ovo">About me</h2>
+        <div id="about" className="w-full px-4 sm:px-6 md:px-[8%] lg:px-[12%] py-10 scroll-mt-20">
+            <h4 className="text-center mb-2 text-base sm:text-lg font-Ovo">Introduction</h4>
+            <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-Ovo">About me</h2>
 
-            <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div className="flex w-full flex-col lg:flex-row items-center gap-10 sm:gap-16 lg:gap-20 my-10 sm:my-16 lg:my-20">
                 <div className="max-w-max mx-auto relative">
-                    <img src='./assets/Yasiru.png' alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" />
+                    <img src='./assets/Yasiru.png' alt="" className="w-48 sm:w-64 md:w-72 lg:w-80 rounded-3xl max-w-none" />
 
-                    <div className="bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_8px_60px_rgba(59,130,246,0.3)] flex items-center justify-center animate-pulse">
+                    <div className="bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_8px_60px_rgba(59,130,246,0.3)] items-center justify-center animate-pulse hidden sm:flex">
                         <div className="bg-white w-[90%] h-[90%] rounded-full flex items-center justify-center shadow-inner relative overflow-hidden">
                             {/* Decorative floating dots */}
                             <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
@@ -82,33 +82,33 @@ export default function About() {
                     </div>
                 </div>
                 <div className="flex-1">
-                    <p className="mb-10 max-w-2xl font-Ovo">I’m a Data Science undergraduate with strong real world problem solving skills and an analytical mindset, focused on AI/ML, Robotics, and AI automation. I aspire to build a professional career in AI/ML within the FinTech domain, with a strong focus on high accuracy financial model development and applied research.</p>
+                    <p className="mb-8 sm:mb-10 max-w-2xl font-Ovo text-sm sm:text-base leading-relaxed">I'm a Data Science undergraduate with strong real world problem solving skills and an analytical mindset, focused on AI/ML, Robotics, and AI automation. I aspire to build a professional career in AI/ML within the FinTech domain, with a strong focus on high accuracy financial model development and applied research.</p>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-2xl">
                         {data.map((item) => (
-                            <li key={item.name} className={`border border-gray-300 dark:border-white/30 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50 ${item.name === 'Education' ? '-mx-5' : ''}`}>
+                            <li key={item.name} className={`border border-gray-300 dark:border-white/30 rounded-xl p-4 sm:p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50`}>
                                 {item.name === 'Education' ? (
-                                    <div className="flex items-center gap-3 mt-3">
-                                        <img src={item.nsbmLogo} alt="NSBM Green University" className="w-16 h-16 object-contain rounded" />
-                                        <img src={item.universityLogo} alt="University of Plymouth" className="w-16 h-16 object-contain rounded" />
+                                    <div className="flex items-center gap-2 sm:gap-3 mt-2 sm:mt-3">
+                                        <img src={item.nsbmLogo} alt="NSBM Green University" className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded" />
+                                        <img src={item.universityLogo} alt="University of Plymouth" className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded" />
                                     </div>
                                 ) : (
                                     <>
-                                        <img src={item.icon1} alt="" className="w-7 mt-3 dark:hidden" />
-                                        <img src={item.icon2} alt="" className="w-7 mt-3 hidden dark:block" />
+                                        <img src={item.icon1} alt="" className="w-6 sm:w-7 mt-2 sm:mt-3 dark:hidden" />
+                                        <img src={item.icon2} alt="" className="w-6 sm:w-7 mt-2 sm:mt-3 hidden dark:block" />
                                     </>
                                 )}
-                                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">{item.name}</h3>
-                                <p className="text-gray-600 text-sm dark:text-white/80">{item.description}</p>
+                                <h3 className="my-3 sm:my-4 font-semibold text-gray-700 dark:text-white text-sm sm:text-base">{item.name}</h3>
+                                <p className="text-gray-600 text-xs sm:text-sm dark:text-white/80">{item.description}</p>
                             </li>
                         ))}
                     </ul>
-                    <h4 className="my-6 text-gray-700 font-Ovo dark:text-white/80">Tools i use</h4>
+                    <h4 className="my-4 sm:my-6 text-gray-700 font-Ovo dark:text-white/80 text-sm sm:text-base">Tools i use</h4>
 
-                    <ul className="flex items-center gap-3 sm:gap-5">
+                    <ul className="flex items-center gap-2 sm:gap-3 md:gap-5 flex-wrap">
                         {tools.map((tool) => (
-                            <li key={tool.name} className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                                <img src={tool.icon} alt={tool.name} className="w-5 sm:w-7" />
+                            <li key={tool.name} className="flex items-center justify-center w-10 sm:w-12 lg:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                                <img src={tool.icon} alt={tool.name} className="w-4 sm:w-5 lg:w-7" />
                             </li>
                         ))}
                     </ul>
